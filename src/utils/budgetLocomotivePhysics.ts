@@ -12,6 +12,33 @@ export interface BudgetLocomotiveItem {
   unitCostBrl: number;
   massG: number;
   sourceTip: string;
+  purchaseUrl?: string;
+  purchaseLabel?: string;
+}
+
+export interface BudgetMotorPurchaseOption {
+  id: string;
+  shortName: string;
+  name: string;
+  spec: string;
+  gear1Rpm: number;
+  gear2Rpm: number;
+  gear1RatedTorqueNm: number;
+  gear2RatedTorqueNm: number;
+  gear1StallTorqueNm: number;
+  gear2StallTorqueNm: number;
+  peakCurrentA: number;
+  motorPriceBrl: number;
+  batteryIncluded: boolean;
+  batteryOverridePriceBrl: number;
+  batteryOverrideName?: string;
+  batteryOverrideSpec?: string;
+  massG: number;
+  recommended: boolean;
+  badge: string;
+  highlights: string;
+  purchaseUrl: string;
+  purchaseLabel: string;
 }
 
 export interface ChainDrivetrainInput {
@@ -169,7 +196,7 @@ export function calculateBudgetSummary(
 
 /**
  * Evaluates how the sub-R$ 200 build performs in all 4 official Cavalos de Ferro proofs
- * and verifies compliance with UFSC Regulation 3.a–3.h.
+ * and verifies compliance with Regulation 3.a–3.h (Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf).
  */
 export function evaluateBudgetFourTrials(params: {
   drivetrain: ChainDrivetrainOutput;

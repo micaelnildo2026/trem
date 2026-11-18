@@ -273,7 +273,7 @@ export const KinematicDrawing: React.FC<Props> = ({ transmission, specs }) => {
 
           {/* Blueprint Header Stamp */}
           <div className="absolute top-4 left-4 z-10 flex flex-col gap-1 bg-slate-950/80 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-800/80 text-[11px] font-mono shadow-lg">
-            <span className="font-bold text-cyan-400">UFSC JOINVILLE • CAVALOS DE FERRO 2026</span>
+            <span className="font-bold text-cyan-400">CAVALOS DE FERRO 2026 • REF. REGULAMENTO 2026</span>
             <span className="text-slate-300">DESENHO CINEMÁTICO: SISTEMA 4WD (150 mm GAUGE)</span>
             <div className="flex items-center gap-3 text-[10px] text-slate-400 mt-0.5">
               <span>ESCALA: 1:2.5</span>

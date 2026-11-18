@@ -99,7 +99,7 @@ export default function App() {
                     CAVALOS DE FERRO 2026
                   </span>
                   <span className="text-[10px] font-mono uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 px-2 py-0.5 rounded-full font-bold">
-                    UFSC Joinville
+                    Edital 2026
                   </span>
                 </div>
                 <p className="text-xs text-slate-400 hidden sm:block">
@@ -288,11 +288,18 @@ export default function App() {
               </h1>
             </div>
             <p className="text-xs text-slate-300 max-w-3xl leading-relaxed">
-              Desenvolvida em conformidade estrita com o Regulamento Cavalos de Ferro 2026 (UFSC Joinville):
-              <strong> bitola central de 150 mm</strong>, <strong>altura de engate de 107,5 mm</strong>, 
-              <strong> tração integral nas 4 rodas</strong> com <strong>redução cilíndrica de engrenagens M1.0 (3:1)</strong> e 
-              <strong> correia dentada GT2 fechada (1:1)</strong> acionadas por 
-              <strong> Motor DC 775 com redutor planetário metálico (1:19.2)</strong>.
+              Desenvolvida em conformidade estrita com o arquivo{' '}
+              <a
+                href="/assets/aistudio/Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf"
+                download="Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf"
+                className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-500/40 font-mono"
+              >
+                Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf
+              </a>
+              : <strong>bitola central de 150 mm</strong>, <strong>altura de engate de 107,5 mm</strong>,{' '}
+              <strong>tração integral nas 4 rodas</strong> com <strong>redução cilíndrica de engrenagens M1.0 (3:1)</strong> e{' '}
+              <strong>correia dentada GT2 fechada (1:1)</strong> acionadas por{' '}
+              <strong>Motor DC 775 com redutor planetário metálico (1:19.2)</strong>.
             </p>
           </div>
 
@@ -460,10 +467,19 @@ export default function App() {
       {/* Footer */}
       <footer className="mt-auto border-t border-slate-800/80 bg-slate-950 py-6 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="font-semibold text-slate-300">Desafio Universitário de Ferromodelismo Cavalos de Ferro 2026</span>
             <span>•</span>
-            <span>UFSC Centro Tecnológico de Joinville (CTJ)</span>
+            <span>
+              Referência:{' '}
+              <a
+                href="/assets/aistudio/Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf"
+                download="Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf"
+                className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-500/40 font-mono"
+              >
+                Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf
+              </a>
+            </span>
           </div>
           <div>
             Bitola 150 mm • Engrenagens M1.0 • Correia Síncrona GT2 • Impressão 3D

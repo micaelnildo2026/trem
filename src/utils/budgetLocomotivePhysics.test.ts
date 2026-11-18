@@ -6,7 +6,11 @@ import {
   evaluateBudgetFourTrials,
   BudgetLocomotiveItem,
 } from './budgetLocomotivePhysics';
-import { BUDGET_200_CORE_ITEMS_OUTLET, BUDGET_200_RC_OPTIONS } from '../data/locomotiveData';
+import {
+  BUDGET_200_CORE_ITEMS_OUTLET,
+  BUDGET_200_MOTOR_OPTIONS,
+  BUDGET_200_RC_OPTIONS,
+} from '../data/locomotiveData';
 
 test('bicycle chain drivetrain ensures safe rail clearance and competition speed', () => {
   const out = calculateScrewdriverChainDrivetrain({
@@ -75,4 +79,28 @@ test('chosen RS-550 1:36 motor + 20A 3S battery passes all 4 official competitio
   assert.equal(evaluation.totalWeightOk, true);
   assert.equal(evaluation.trials.length, 4);
   assert.ok(evaluation.regulationSummary.every((r) => r.compliant));
+});
+
+test('all purchasable motor options stay within R$ 200 and every purchased item has a valid HTTPS purchaseUrl', () => {
+  for (const item of BUDGET_200_CORE_ITEMS_OUTLET) {
+    if (item.category === 'core_budget') {
+      assert.ok(item.purchaseUrl?.startsWith('https://'), `Missing HTTPS purchaseUrl on ${item.id}`);
+    }
+  }
+  for (const rcOpt of BUDGET_200_RC_OPTIONS) {
+    for (const rcItem of rcOpt.items) {
+      assert.ok(rcItem.purchaseUrl?.startsWith('https://'), `Missing HTTPS purchaseUrl on ${rcItem.id}`);
+    }
+  }
+  assert.ok(BUDGET_200_MOTOR_OPTIONS.length >= 3);
+  for (const motorOpt of BUDGET_200_MOTOR_OPTIONS) {
+    assert.ok(motorOpt.purchaseUrl.startsWith('https://'), `Missing purchaseUrl on motor ${motorOpt.id}`);
+    const updatedCore = BUDGET_200_CORE_ITEMS_OUTLET.map((item) => {
+      if (item.id === 'b-motor') return { ...item, unitCostBrl: motorOpt.motorPriceBrl };
+      if (item.id === 'b-battery') return { ...item, unitCostBrl: motorOpt.batteryOverridePriceBrl };
+      return item;
+    });
+    const audit = calculateBudgetSummary(updatedCore, 200);
+    assert.equal(audit.withinBudgetCap, true, `Motor ${motorOpt.id} exceeded R$ 200 (${audit.coreTotalBrl})`);
+  }
 });

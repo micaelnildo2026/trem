@@ -229,7 +229,7 @@ export function evaluateTugOfWarFrame(input: TugOfWarFrameInput): TrialFrameStat
   const moveFrac = Math.min(1, (clampedT - tensionPhaseS) / (duration - tensionPhaseS));
   // Smooth acceleration pull up to 1.20 m victory mark
   const easedPull = moveFrac * moveFrac * (3 - 2 * moveFrac);
-  const sign = netForce > 0 ? -1 : 1; // negative = toward UFSC victory flag on left
+  const sign = netForce > 0 ? -1 : 1; // negative = toward left victory flag
   const distanceM = sign * 1.2 * easedPull;
   const dragSpeed = (Math.abs(netForce) / Math.max(5, input.totalMassKg)) * 0.18 * (1 - 0.3 * moveFrac);
   const isFinished = t >= duration;

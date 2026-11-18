@@ -47,7 +47,7 @@ export const DOSSIER_PAGES: DossierPageInfo[] = [
     code: 'Capa_Ilustracao_4WD', 
     shortLabel: 'Pág 1: Capa & Ilustração', 
     badge: 'Capa Oficial',
-    description: 'Cabeçalho UFSC, identificação da equipe, título do projeto e ilustração técnica isométrica em corte 3D.'
+    description: 'Cabeçalho oficial, identificação da equipe, título do projeto e ilustração técnica isométrica em corte 3D.'
   },
   { 
     index: 1, 
@@ -100,7 +100,7 @@ export const DOSSIER_PAGES: DossierPageInfo[] = [
     title: 'Roteiro Cronometrado da Defesa Oral de 10 Minutos perante a Banca', 
     code: 'Roteiro_Defesa_Oral_10min', 
     shortLabel: 'Pág 7: Defesa Oral (10 min)', 
-    badge: 'Banca UFSC',
+    badge: 'Banca Avaliadora',
     description: 'Roteiro cronometrado para o representante da equipe abordar dimensões, motorização, tração, sistema elétrico e arguição.'
   },
 ];
@@ -151,7 +151,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
   const handleNativePrint = () => {
     setActivePrintPageIndex(null);
     const prevTitle = document.title;
-    document.title = 'Locomotiva_Cavalos_de_Ferro_2026_PROJETO_COMPLETO_UNIFICADO_UFSC';
+    document.title = 'Locomotiva_Cavalos_de_Ferro_2026_PROJETO_COMPLETO_UNIFICADO';
     window.print();
     setTimeout(() => {
       document.title = prevTitle;
@@ -166,7 +166,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
     setActivePrintPageIndex(pageIndex);
     setShowPageMenu(false);
     const prevTitle = document.title;
-    document.title = `Locomotiva_UFSC_2026_Pagina_${pageInfo.pageNumber}_${pageInfo.code}`;
+    document.title = `Locomotiva_2026_Pagina_${pageInfo.pageNumber}_${pageInfo.code}`;
 
     setTimeout(() => {
       window.print();
@@ -210,7 +210,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
 
       const imgData = canvas.toDataURL('image/jpeg', 0.98);
       pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
-      pdf.save(`Locomotiva_UFSC_2026_Pagina_${pageInfo.pageNumber}_${pageInfo.code}.pdf`);
+      pdf.save(`Locomotiva_2026_Pagina_${pageInfo.pageNumber}_${pageInfo.code}.pdf`);
     } catch (err) {
       console.error('Erro ao gerar página individual:', err);
       alert(`Houve um erro ao processar via canvas. Utilize a opção "Imprimir Pág. ${pageInfo.pageNumber} (Vetorial)"!`);
@@ -252,7 +252,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
 
         const imgData = canvas.toDataURL('image/jpeg', 0.98);
         pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
-        pdf.save(`Locomotiva_UFSC_2026_Pagina_${i + 1}_${pageInfo?.code || 'Doc'}.pdf`);
+        pdf.save(`Locomotiva_2026_Pagina_${i + 1}_${pageInfo?.code || 'Doc'}.pdf`);
 
         // Intervalo entre downloads de arquivos
         await new Promise(r => setTimeout(r, 650));
@@ -307,7 +307,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
       }
 
       setGenerationProgress('Finalizando arquivo PDF com todo o projeto...');
-      pdf.save('Locomotiva_Cavalos_de_Ferro_2026_PROJETO_COMPLETO_UNIFICADO_UFSC.pdf');
+      pdf.save('Locomotiva_Cavalos_de_Ferro_2026_PROJETO_COMPLETO_UNIFICADO.pdf');
     } catch (err) {
       console.error('Erro ao gerar PDF completo:', err);
       alert('Houve um erro na compilação automática. Utilize a opção "Imprimir em PDF (Sem Renderizar • Vetorial)"!');
@@ -364,7 +364,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
               <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
                 Exportar Todo o Projeto Unificado em PDF
                 <span className="text-[10px] font-mono uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold">
-                  7 Páginas Juntas • Oficial UFSC
+                  7 Páginas Juntas • Edital 2026
                 </span>
               </h2>
               <p className="text-xs text-slate-400">
@@ -599,13 +599,13 @@ export const FullProjectPdfExport: React.FC<Props> = ({
               {/* Institution Header */}
               <div className="text-center space-y-1.5 border-b-2 border-slate-800 pb-4">
                 <div className="text-xs uppercase tracking-widest font-sans font-bold text-slate-600">
-                  Universidade Federal de Santa Catarina • Campus Joinville
+                  Desafio Universitário de Ferromodelismo • Cavalos de Ferro 2026
                 </div>
                 <div className="text-sm font-sans font-bold text-slate-800">
-                  Centro Tecnológico de Joinville (CTJ) • Engenharia Ferroviária & Metroviária
+                  Projeto de Engenharia Mecânica e Elétrica — Locomotiva 4WD (Bitola 150 mm)
                 </div>
                 <div className="text-xs font-sans text-slate-500 uppercase tracking-wider">
-                  Desafio Universitário de Ferromodelismo — Cavalos de Ferro 2026
+                  Arquivo de Referência: Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf
                 </div>
               </div>
 
@@ -644,7 +644,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
                 <div>
                   <strong>Competição:</strong> Desafio Cavalos de Ferro 2026<br />
                   <strong>Data da Apresentação:</strong> 02 de Dezembro de 2026<br />
-                  <strong>Local:</strong> Hall do Bloco U — UFSC Joinville
+                  <strong>Referência:</strong> Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf
                 </div>
                 <div className="text-right">
                   <strong>Equipe:</strong> Máximo de 2 Estudantes Universitários<br />
@@ -822,7 +822,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
 
               <div className="border-t border-slate-300 pt-2.5 text-[10px] font-sans text-slate-500 flex justify-between">
                 <span>Desafio Universitário Cavalos de Ferro 2026</span>
-                <span>Relatório Técnico Oficial de Projeto • UFSC Joinville</span>
+                <span>Ref.: Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf</span>
               </div>
             </div>
 
@@ -1103,18 +1103,18 @@ export const FullProjectPdfExport: React.FC<Props> = ({
                     </g>
 
                     {/* ==========================================
-                        SELO TÉCNICO NORMALIZADO UFSC JOINVILLE (ABNT)
+                        SELO TÉCNICO NORMALIZADO ABNT
                        ========================================== */}
                     <g transform="translate(530, 355)">
                       <rect x="0" y="0" width="215" height="145" fill="#ffffff" stroke="#0f172a" strokeWidth="1.5" />
                       
-                      {/* Institution Title */}
+                      {/* Header Title */}
                       <rect x="0" y="0" width="215" height="28" fill="#f1f5f9" stroke="#0f172a" strokeWidth="1" />
                       <text x="107" y="12" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#0f172a" fontFamily="sans-serif">
-                        UFSC • CENTRO TECNOLÓGICO DE JOINVILLE
+                        CAVALOS DE FERRO 2026 • SELO TÉCNICO
                       </text>
-                      <text x="107" y="23" textAnchor="middle" fontSize="7" fill="#475569" fontFamily="sans-serif">
-                        ENGENHARIA FERROVIÁRIA & METROVIÁRIA
+                      <text x="107" y="23" textAnchor="middle" fontSize="6.5" fill="#475569" fontFamily="sans-serif">
+                        REF: Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf
                       </text>
 
                       {/* Drawing Name */}
@@ -1175,7 +1175,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
 
               <div className="border-t border-slate-300 pt-2.5 text-[10px] font-sans text-slate-500 flex justify-between">
                 <span>Desafio Universitário Cavalos de Ferro 2026</span>
-                <span>Relatório Técnico Oficial de Projeto • UFSC Joinville</span>
+                <span>Ref.: Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf</span>
               </div>
             </div>
 
@@ -1271,7 +1271,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
 
               <div className="border-t border-slate-300 pt-2.5 text-[10px] font-sans text-slate-500 flex justify-between">
                 <span>Desafio Universitário Cavalos de Ferro 2026</span>
-                <span>Relatório Técnico Oficial de Projeto • UFSC Joinville</span>
+                <span>Ref.: Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf</span>
               </div>
             </div>
 
@@ -1373,7 +1373,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
 
               <div className="border-t border-slate-300 pt-2.5 text-[10px] font-sans text-slate-500 flex justify-between">
                 <span>Desafio Universitário Cavalos de Ferro 2026</span>
-                <span>Relatório Técnico Oficial de Projeto • UFSC Joinville</span>
+                <span>Ref.: Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf</span>
               </div>
             </div>
 
@@ -1525,12 +1525,12 @@ export const FullProjectPdfExport: React.FC<Props> = ({
 
               <div className="border-t border-slate-300 pt-2.5 text-[10px] font-sans text-slate-500 flex justify-between">
                 <span>Desafio Universitário Cavalos de Ferro 2026</span>
-                <span>Relatório Técnico Oficial de Projeto • UFSC Joinville</span>
+                <span>Ref.: Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf</span>
               </div>
             </div>
 
             {/* =========================================================================
-                PÁGINA 7: ROTEIRO DA DEFESA ORAL (10 MINUTOS PERANTE A BANCA UFSC)
+                PÁGINA 7: ROTEIRO DA DEFESA ORAL (10 MINUTOS PERANTE A BANCA)
                ========================================================================= */}
             <div id="dossier-page-anchor-6" className="no-print p-2.5 bg-slate-900 border-b border-slate-800 flex flex-wrap items-center justify-between text-xs px-4">
               <div className="flex items-center gap-2">
@@ -1538,7 +1538,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
                   7
                 </span>
                 <span className="font-semibold text-white">Página 7: Roteiro Cronometrado da Defesa Oral de 10 Minutos</span>
-                <span className="text-[10px] font-mono text-cyan-300 bg-cyan-950/60 px-1.5 py-0.5 rounded border border-cyan-800">Banca UFSC</span>
+                <span className="text-[10px] font-mono text-cyan-300 bg-cyan-950/60 px-1.5 py-0.5 rounded border border-cyan-800">Banca Avaliadora</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <button
@@ -1584,7 +1584,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
                       [00:00 - 02:00] • Introdução & Conformidade Regulamentar (Critério 1: Dimensões)
                     </div>
                     <p className="text-slate-600 italic text-[10.5px]">
-                      "Apresentação da equipe de Engenharia Ferroviária da UFSC Joinville. Nosso protótipo foi projetado sob medida para explorar os limites físicos das 4 provas do edital: bitola exata de 150 mm, altura do engate rigorosamente em 107,5 mm e peso otimizado de 7.650 g, sem nenhuma penalidade dimensional."
+                      "Apresentação da equipe para o Desafio Cavalos de Ferro 2026 (conforme Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf). Nosso protótipo foi projetado sob medida para explorar os limites físicos das 4 provas do edital: bitola exata de 150 mm, altura do engate rigorosamente em 107,5 mm e peso otimizado de 7.650 g, sem nenhuma penalidade dimensional."
                     </p>
                   </div>
 
@@ -1631,7 +1631,7 @@ export const FullProjectPdfExport: React.FC<Props> = ({
 
               <div className="border-t border-slate-300 pt-2.5 text-[10px] font-sans text-slate-500 flex justify-between">
                 <span>Desafio Universitário Cavalos de Ferro 2026</span>
-                <span>Relatório Técnico Oficial de Projeto • UFSC Joinville</span>
+                <span>Ref.: Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf</span>
               </div>
             </div>
 

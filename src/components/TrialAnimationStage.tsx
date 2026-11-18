@@ -66,7 +66,7 @@ const AnimatedLocoGlyph: React.FC<{
   isSlipping,
   facing = 'right',
   accentColor = '#10b981',
-  label = 'UFSC 4x4',
+  label = 'LOCO 4x4',
   subLabel = '7.65 kg',
   is4x4 = true,
 }) => {
@@ -462,7 +462,7 @@ export const TrialAnimationStage: React.FC<Props> = ({
                 wheelAngleDeg={frame.wheelAngleDeg}
                 isSlipping={frame.isSlipping}
                 accentColor={helpersPassed ? '#10b981' : '#ef4444'}
-                label="UFSC 4x4"
+                label="LOCO 4x4"
                 subLabel={`${locoMassKg.toFixed(2)} kg`}
               />
 
@@ -553,7 +553,7 @@ export const TrialAnimationStage: React.FC<Props> = ({
                   wheelAngleDeg={frame.wheelAngleDeg}
                   isSlipping={frame.isSlipping}
                   accentColor={rampPassed ? '#10b981' : '#ef4444'}
-                  label="UFSC 4x4"
+                  label="LOCO 4x4"
                   subLabel={`${locoMassKg.toFixed(2)} kg`}
                 />
 
@@ -676,11 +676,11 @@ export const TrialAnimationStage: React.FC<Props> = ({
                 CENTRO (0,0 m)
               </text>
 
-              {/* Left UFSC Victory Marker (-1.2m -> rival dragged left or our rear crosses 1.2m) */}
+              {/* Left Team Victory Marker (-1.2m -> rival dragged left or our rear crosses 1.2m) */}
               <line x1="165" y1="68" x2="165" y2="202" stroke="#10b981" strokeWidth="2" strokeDasharray="5 3" />
               <rect x="98" y="46" width="134" height="18" rx="4" fill="#064e3b" stroke="#10b981" strokeWidth="1" />
               <text x="165" y="58" textAnchor="middle" fill="#6ee7b7" fontSize="9" fontFamily="monospace" fontWeight="bold">
-                VITÓRIA UFSC (1,2 m)
+                VITÓRIA EQUIPE (1,2 m)
               </text>
 
               {/* Right Rival Victory Marker */}
@@ -712,7 +712,7 @@ export const TrialAnimationStage: React.FC<Props> = ({
                 FS={hitchSafetyFactor.toFixed(0)}x
               </text>
 
-              {/* Left Locomotive: UFSC 4x4 */}
+              {/* Left Locomotive: LOCO 4x4 */}
               <AnimatedLocoGlyph
                 x={ourTugX}
                 y={194}
@@ -720,7 +720,7 @@ export const TrialAnimationStage: React.FC<Props> = ({
                 wheelAngleDeg={tugOfWarWin ? -frame.wheelAngleDeg : frame.wheelAngleDeg}
                 isSlipping={!tugOfWarWin && !isTensionWarmup}
                 accentColor="#10b981"
-                label="UFSC 4x4"
+                label="LOCO 4x4"
                 subLabel={`${maxAdhesionForceN.toFixed(1)}N`}
               />
 

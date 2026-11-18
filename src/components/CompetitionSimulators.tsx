@@ -294,7 +294,7 @@ export const CompetitionSimulators: React.FC<Props> = ({ specs, transmission, se
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div className="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-4">
                 <div className="text-xs font-mono uppercase tracking-wider text-purple-400 font-bold">
-                  Ângulo da Rampa (Hall do Bloco U)
+                  Ângulo da Rampa (Prova 4.3 do Regulamento)
                 </div>
                 <div className="space-y-4 text-xs">
                   <div>
@@ -602,7 +602,7 @@ export const CompetitionSimulators: React.FC<Props> = ({ specs, transmission, se
 
                 <div className="p-4 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 leading-relaxed space-y-2">
                   <p>
-                    <strong className="text-white">A Chave da Vitória no Cabo de Guerra:</strong> No regulamento da UFSC, vence quem arrastar o outro até a traseira cruzar a marca de 1,2 metros. Em caso de empate, vence a maior distância.
+                    <strong className="text-white">A Chave da Vitória no Cabo de Guerra:</strong> Conforme o arquivo Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf, vence quem arrastar o outro até a traseira cruzar a marca de 1,2 metros. Em caso de empate, vence a maior distância.
                   </p>
                   <p>
                     Nosso protótipo foi projetado com <strong>7.650 gramas</strong> (ficando 350g abaixo do teto de 8.000g para não tomar nenhuma penalidade), com centro de gravidade rebaixado e lastro de aço centralizado sobre os rodeiros. Com 4 rodas tracionadas simultaneamente por engrenagem e correia GT2, nenhum eixo patina individualmente. O adversário com apenas 2 rodas tracionadas ou sem lastro ideal é arrastado nos primeiros 3 segundos!

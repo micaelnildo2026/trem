@@ -1,6 +1,6 @@
 {
   "name": "Locomotiva Cavalos de Ferro 2026 - Engenharia & Transmissão 4x4",
-  "description": "Projeto completo da Locomotiva para o Desafio Universitário de Ferromodelismo Cavalos de Ferro 2026 (UFSC Joinville). Sistema de tração 4 rodas com engrenagens e correia GT2, bitola 150mm, modelador 3D interativo, memorial descritivo e parâmetros de impressão 3D.",
+  "description": "Projeto completo da Locomotiva para o Desafio Universitário de Ferromodelismo Cavalos de Ferro 2026 (Ref.: Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf). Sistema de tração 4 rodas com engrenagens e correia GT2, bitola 150mm, modelador 3D interativo, memorial descritivo e parâmetros de impressão 3D.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

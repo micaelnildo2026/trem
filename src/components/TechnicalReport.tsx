@@ -49,7 +49,7 @@ export const TechnicalReport: React.FC<Props> = ({ specs, transmission }) => {
               </span>
             </h2>
             <p className="text-xs text-slate-400">
-              Documentação oficial para apresentação à banca avaliadora da UFSC Campus Joinville
+              Documentação oficial para apresentação à banca avaliadora (Ref.: Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf)
             </p>
           </div>
         </div>
@@ -126,7 +126,7 @@ export const TechnicalReport: React.FC<Props> = ({ specs, transmission }) => {
                 </div>
                 <h4 className="text-sm font-bold text-white">Apresentação da Equipe & Filosofia do Projeto</h4>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  "Bom dia à banca avaliadora da UFSC Joinville. Apresentamos a nossa locomotiva projetada sob medida para as 4 provas do Cavalos de Ferro 2026. Nosso objetivo não foi apenas atender os limites do edital, mas explorar a física limite do ferromodelismo: bitola rigorosa de 150 mm, altura de engate cravada em 107.5 mm e massa calculada em 7.650 gramas para atrito máximo sem nenhuma penalidade."
+                  "Bom dia à banca avaliadora. Apresentamos a nossa locomotiva projetada sob medida para as 4 provas do Cavalos de Ferro 2026 (conforme Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf). Nosso objetivo não foi apenas atender os limites do edital, mas explorar a física limite do ferromodelismo: bitola rigorosa de 150 mm, altura de engate cravada em 107.5 mm e massa calculada em 7.650 gramas para atrito máximo sem nenhuma penalidade."
                 </p>
               </div>
 
@@ -165,7 +165,7 @@ export const TechnicalReport: React.FC<Props> = ({ specs, transmission }) => {
                 </div>
                 <h4 className="text-sm font-bold text-white">Desempenho nas 4 Provas & Conclusão</h4>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  "Com este conjunto, nossa força de empuxo trator chega a 48.8 N nos trilhos, permitindo empurrar os 20 kg no Helpers com tranquilidade, vencer a rampa de 20° na escadaria do Hall do Bloco U sem recuo e garantir tração superior no Cabo de Guerra. Estamos à disposição para as perguntas da banca."
+                  "Com este conjunto, nossa força de empuxo trator chega a 48.8 N nos trilhos, permitindo puxar os 20 kg no Helpers com tranquilidade, vencer a rampa de 20° sem recuo e garantir tração superior no Cabo de Guerra. Estamos à disposição para as perguntas da banca."
                 </p>
               </div>
             </div>
@@ -215,7 +215,8 @@ export const TechnicalReport: React.FC<Props> = ({ specs, transmission }) => {
                   • Massa total da locomotiva lastrada: <strong>m = 7,65 kg</strong> (Força normal total Fn = 7,65 × 9,81 = <strong>75,05 N</strong>).<br />
                   • Coeficiente de atrito estático com anel de poliuretano 70A sobre trilho: <strong>μ = 0,65</strong>.<br />
                   • Força máxima de tração sem patinamento (Limite de Coulomb): Fat_max = μ × Fn = 0,65 × 75,05 = <strong>48,78 N (~4,97 kgf de empuxo limpo)</strong>.<br />
-                  • Como a força tratora do motor (398 N) é muito superior à força de aderência limite (48,8 N), o motor opera com folga térmica absoluta sem risco de stall prematuro.
+                  • Como a força tratora do motor (398 N) é muito superior à força de aderência limite (48,8 N), o motor opera com folga térmica absoluta sem risco de stall prematuro.<br />
+                  • <strong>Arquivo de referência utilizado:</strong> Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf (Itens 3 e 4).
                 </p>
               </div>
             </div>

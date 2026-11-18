@@ -199,8 +199,8 @@ export const DEFAULT_TRANSMISSION: TransmissionConfig = {
 };
 
 export const DEFAULT_LOCOMOTIVE_SPECS: LocomotiveSpecs = {
-  gaugeMm: 150.0, // Exatamente 150 mm (Regulamento UFSC 3.a)
-  hitchHeightMm: 107.5, // 105 a 110 mm (Regulamento UFSC 3.b) - Centro exato
+  gaugeMm: 150.0, // Exatamente 150 mm (Regulamento Cavalos de Ferro 2026, Item 3.a)
+  hitchHeightMm: 107.5, // 105 a 110 mm (Regulamento Cavalos de Ferro 2026, Item 3.b) - Centro exato
   totalLengthMm: 335.0, // Máximo 360 mm (Margem segura de 25mm)
   totalWidthMm: 205.0, // Máximo 220 mm (Margem segura de 15mm)
   totalHeightMm: 245.0, // Máximo 330 mm (Margem segura de 85mm)
@@ -557,6 +557,77 @@ export const DIY_MOTOR_FABRICATION_STEPS: FabricationStep[] = [
   }
 ];
 
+export const BUDGET_200_MOTOR_OPTIONS = [
+  {
+    id: 'motor-rs550-planetaria',
+    shortName: 'RS-550 12V + Planetária Metálica 1:36',
+    name: 'Motor Escolhido: DC RS-550 c/ Redutor Planetário Metálico 1:36 (1ª Marcha)',
+    spec: 'Conjunto motor + planetária de parafusadeira 12V (290 RPM, 4,6 N.m nom / 14,5 N.m stall)',
+    gear1Rpm: 290,
+    gear2Rpm: 880,
+    gear1RatedTorqueNm: 4.6,
+    gear2RatedTorqueNm: 1.7,
+    gear1StallTorqueNm: 14.5,
+    gear2StallTorqueNm: 5.4,
+    peakCurrentA: 35,
+    motorPriceBrl: 65,
+    batteryIncluded: false,
+    batteryOverridePriceBrl: 52,
+    massG: 520,
+    recommended: true,
+    badge: 'RECOMENDADO · MELHOR TORQUE',
+    highlights: 'Engrenagens planetárias 100% aço sinterizado: aguenta 14,5 N.m sem quebrar dentes no Cabo de Guerra + pack Li-Ion 20A/BMS 40A dedicado (Total R$ 196).',
+    purchaseUrl: 'https://lista.mercadolivre.com.br/motor-parafusadeira-12v-caixa-reducao-planetaria',
+    purchaseLabel: 'Comprar Motor 12V ML'
+  },
+  {
+    id: 'motor-kit-parafusadeira',
+    shortName: 'Kit Parafusadeira 12V c/ Bateria & Carregador',
+    name: 'Motor Escolhido: Kit Parafusadeira 12V 2 Marchas (Motor + Bateria 12V + Carregador)',
+    spec: 'Compra única fechada: extrai motor RS-550 1:36 + pack 12V + carregador bivolt (285 RPM, 4,4 N.m nom / 13,5 N.m stall)',
+    gear1Rpm: 285,
+    gear2Rpm: 860,
+    gear1RatedTorqueNm: 4.4,
+    gear2RatedTorqueNm: 1.65,
+    gear1StallTorqueNm: 13.5,
+    gear2StallTorqueNm: 5.0,
+    peakCurrentA: 32,
+    motorPriceBrl: 99,
+    batteryIncluded: true,
+    batteryOverridePriceBrl: 0,
+    batteryOverrideName: 'Bateria 12V Integrada ao Kit Parafusadeira (Inclusa c/ Carregador)',
+    batteryOverrideSpec: 'Pack 3S 12V incluso na compra da parafusadeira (R$ 0 extra; recomendado reforçar BMS 40A se travar)',
+    massG: 540,
+    recommended: false,
+    badge: 'KIT COMPLETO · R$ 178 TOTAL',
+    highlights: 'Solução mais prática de compra: vem motor, caixa 2 marchas, bateria 12V e carregador por R$ 99, baixando o orçamento total para R$ 178 (folga de R$ 22).',
+    purchaseUrl: 'https://lista.mercadolivre.com.br/parafusadeira-12v-com-bateria-carregador',
+    purchaseLabel: 'Comprar Kit Parafusadeira'
+  },
+  {
+    id: 'motor-redutor-rs550-320',
+    shortName: 'Motor Redutor RS-550 12V 320 RPM (Robótica)',
+    name: 'Motor Escolhido: Motor Redutor Compacto RS-550 12V (~320 RPM)',
+    spec: 'Redutor metálico compacto para tração elétrica 12V (320 RPM, 4,1 N.m nom / 12,8 N.m stall)',
+    gear1Rpm: 320,
+    gear2Rpm: 720,
+    gear1RatedTorqueNm: 4.1,
+    gear2RatedTorqueNm: 1.8,
+    gear1StallTorqueNm: 12.8,
+    gear2StallTorqueNm: 5.1,
+    peakCurrentA: 30,
+    motorPriceBrl: 62,
+    batteryIncluded: false,
+    batteryOverridePriceBrl: 52,
+    massG: 480,
+    recommended: false,
+    badge: 'MAIOR VELOCIDADE · R$ 193',
+    highlights: 'Eixo cilíndrico/chanfrado direto que dispensa desmontar mandril; alcança 1,23 m/s na prova de Aceleração mantendo tração plena nas 4 provas.',
+    purchaseUrl: 'https://lista.mercadolivre.com.br/motor-rs550-12v-caixa-reducao',
+    purchaseLabel: 'Comprar Motor Redutor ML'
+  }
+];
+
 export const BUDGET_200_CORE_ITEMS_OUTLET = [
   {
     id: 'b-motor',
@@ -565,7 +636,9 @@ export const BUDGET_200_CORE_ITEMS_OUTLET = [
     category: 'core_budget' as const,
     unitCostBrl: 65,
     massG: 520,
-    sourceTip: 'Parafusadeira 12V outlet/desmanche (evita engrenagem plástica no Cabo de Guerra)'
+    sourceTip: 'Parafusadeira 12V peça reposição (evita engrenagem plástica no Cabo de Guerra)',
+    purchaseUrl: 'https://lista.mercadolivre.com.br/motor-parafusadeira-12v-caixa-reducao-planetaria',
+    purchaseLabel: 'Comprar Motor 12V'
   },
   {
     id: 'b-battery',
@@ -574,7 +647,9 @@ export const BUDGET_200_CORE_ITEMS_OUTLET = [
     category: 'core_budget' as const,
     unitCostBrl: 52,
     massG: 240,
-    sourceTip: 'Pack 3S alta descarga ou bateria original de parafusadeira 12V/18V adaptada com BMS 40A'
+    sourceTip: 'Pack 3S alta descarga com BMS 40A',
+    purchaseUrl: 'https://lista.mercadolivre.com.br/bateria-12v-3s-18650-pack-bms-40a',
+    purchaseLabel: 'Comprar Pack 3S 40A'
   },
   {
     id: 'b-axles',
@@ -583,7 +658,9 @@ export const BUDGET_200_CORE_ITEMS_OUTLET = [
     category: 'core_budget' as const,
     unitCostBrl: 20,
     massG: 270,
-    sourceTip: 'Casa de ferragens (porcas autofrenantes travam roda + pinhão sem peça solta)'
+    sourceTip: 'Casa de ferragens / Mercado Livre (porcas Parlock travam roda + pinhão)',
+    purchaseUrl: 'https://lista.mercadolivre.com.br/barra-roscada-m10-aco-porca-parlock',
+    purchaseLabel: 'Comprar Eixos + Parlock'
   },
   {
     id: 'b-sprockets',
@@ -592,7 +669,9 @@ export const BUDGET_200_CORE_ITEMS_OUTLET = [
     category: 'core_budget' as const,
     unitCostBrl: 30,
     massG: 340,
-    sourceTip: 'Bicicletaria de bairro (3 pinhões simples de aço ~R$ 10 cada)'
+    sourceTip: 'Bicicletaria / loja online (3 pinhões simples de aço ~R$ 10 cada)',
+    purchaseUrl: 'https://lista.mercadolivre.com.br/pinhao-catraca-bicicleta-14-16-dentes',
+    purchaseLabel: 'Comprar Pinhões 14T/16T'
   },
   {
     id: 'b-chain',
@@ -601,7 +680,9 @@ export const BUDGET_200_CORE_ITEMS_OUTLET = [
     category: 'core_budget' as const,
     unitCostBrl: 20,
     massG: 290,
-    sourceTip: 'Bicicletaria local (corrente comum BMX / barra forte cortada sob medida)'
+    sourceTip: 'Bicicletaria / loja online (corrente grossa BMX / barra forte)',
+    purchaseUrl: 'https://lista.mercadolivre.com.br/corrente-bicicleta-grossa-1-2-x-1-8',
+    purchaseLabel: 'Comprar Corrente Bike'
   },
   {
     id: 'b-fasteners',
@@ -610,7 +691,9 @@ export const BUDGET_200_CORE_ITEMS_OUTLET = [
     category: 'core_budget' as const,
     unitCostBrl: 9,
     massG: 90,
-    sourceTip: 'Loja de eletrônica/parafusos (cumpre 100% da vistoria técnica do edital)'
+    sourceTip: 'Loja de eletrônica/parafusos (cumpre 100% da vistoria técnica do edital)',
+    purchaseUrl: 'https://lista.mercadolivre.com.br/chave-alavanca-20a-12v-parafusos-m4',
+    purchaseLabel: 'Comprar Chave + Kit M4'
   },
   {
     id: 'b-wheels-3d',
@@ -654,7 +737,9 @@ export const BUDGET_200_RC_OPTIONS = [
         category: 'remote_control_excluded' as const,
         unitCostBrl: 35,
         massG: 18,
-        sourceTip: 'Fora do teto de R$ 200'
+        sourceTip: 'Fora do teto de R$ 200',
+        purchaseUrl: 'https://lista.mercadolivre.com.br/esp32-devkit-v1-wifi-bluetooth',
+        purchaseLabel: 'Comprar ESP32'
       },
       {
         id: 'rc-bts',
@@ -663,16 +748,20 @@ export const BUDGET_200_RC_OPTIONS = [
         category: 'remote_control_excluded' as const,
         unitCostBrl: 48,
         massG: 65,
-        sourceTip: 'Fora do teto de R$ 200'
+        sourceTip: 'Fora do teto de R$ 200',
+        purchaseUrl: 'https://lista.mercadolivre.com.br/ponte-h-bts7960-43a',
+        purchaseLabel: 'Comprar BTS7960 43A'
       },
       {
         id: 'rc-buck',
-        name: 'Regulador 5V (LM2596/Mini-360) + Chave Geral + Fios 14 AWG',
+        name: 'Regulador 5V (LM2596/Mini-360) + Fios 14 AWG',
         spec: 'Alimenta o ESP32 em 5V estáveis a partir da bateria 12V da parafusadeira',
         category: 'remote_control_excluded' as const,
         unitCostBrl: 12,
         massG: 45,
-        sourceTip: 'Fora do teto de R$ 200'
+        sourceTip: 'Fora do teto de R$ 200',
+        purchaseUrl: 'https://lista.mercadolivre.com.br/regulador-tensao-lm2596-step-down',
+        purchaseLabel: 'Comprar Regulador 5V'
       }
     ]
   },
@@ -684,11 +773,13 @@ export const BUDGET_200_RC_OPTIONS = [
       {
         id: 'rc-txrx',
         name: 'Conjunto Transmissor + Receptor 2.4 GHz (3CH/6CH)',
-        spec: 'Alcance > 100 m sem interferência de Wi-Fi no ginásio/hall do bloco',
+        spec: 'Alcance > 100 m sem interferência de Wi-Fi na arena de prova',
         category: 'remote_control_excluded' as const,
         unitCostBrl: 180,
         massG: 35,
-        sourceTip: 'Fora do teto de R$ 200 (receptor na locomotiva; rádio portátil)'
+        sourceTip: 'Fora do teto de R$ 200 (receptor na locomotiva; rádio portátil)',
+        purchaseUrl: 'https://lista.mercadolivre.com.br/radio-controle-flysky-fs-i6-receptor',
+        purchaseLabel: 'Comprar Rádio 2.4GHz'
       },
       {
         id: 'rc-esc60',
@@ -697,7 +788,9 @@ export const BUDGET_200_RC_OPTIONS = [
         category: 'remote_control_excluded' as const,
         unitCostBrl: 55,
         massG: 42,
-        sourceTip: 'Fora do teto de R$ 200'
+        sourceTip: 'Fora do teto de R$ 200',
+        purchaseUrl: 'https://lista.mercadolivre.com.br/esc-brushed-60a-bec-5v',
+        purchaseLabel: 'Comprar ESC 60A'
       }
     ]
   }

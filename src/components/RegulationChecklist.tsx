@@ -37,13 +37,21 @@ export const RegulationChecklist: React.FC<Props> = ({ specs }) => {
           </div>
           <div>
             <h2 className="text-lg font-bold text-white flex items-center gap-2">
-              Checklist de Conformidade Técnica & Inspeção
+              Checklist de Conformidade Técnica &amp; Inspeção
               <span className="text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full">
-                UFSC Cavalos de Ferro 2026
+                Cavalos de Ferro 2026
               </span>
             </h2>
             <p className="text-xs text-slate-400">
-              Verificação dos critérios eliminatórios e penalidades do Procedimento de Inspeção (Item 3 e 4.1)
+              Verificação dos critérios eliminatórios e penalidades (Referência:{' '}
+              <a
+                href="/assets/aistudio/Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf"
+                download="Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf"
+                className="text-emerald-400 hover:text-emerald-300 underline font-mono"
+              >
+                Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf
+              </a>{' '}
+              — Itens 3 e 4.1)
             </p>
           </div>
         </div>
@@ -99,7 +107,7 @@ export const RegulationChecklist: React.FC<Props> = ({ specs }) => {
         <div className="p-5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-3">
           <div className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
             <Scale className="w-4 h-4 text-amber-400" />
-            Tabela Oficial de Penalidades - Prova de Projeto (Página 5 do Edital):
+            Tabela Oficial de Penalidades - Prova de Projeto (Página 5 do arquivo Regulamento-Cavalos-de-Ferro-2026_ef665518.pdf):
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
             <div className="p-3 rounded-lg bg-slate-900 border border-slate-800">
